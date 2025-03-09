@@ -3,3 +3,4 @@ __pycache__
 *.gif
 nodes/loader_nodes.py
 .DS_Store
+demo.py
