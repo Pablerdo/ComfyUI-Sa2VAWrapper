@@ -31,14 +31,17 @@ class Sa2VABase:
     
     model = AutoModelForCausalLM.from_pretrained(
         model_path, 
-        torch_dtype="auto",
-        device_map="auto",
+        torch_dtype=torch.bfloat16,
+        low_cpu_mem_usage=True,
+        use_flash_attn=True,
+        device_map="cuda",
         trust_remote_code=True
-    )
+    ).eval().cuda()
     
     tokenizer = AutoProcessor.from_pretrained(
        model_path, 
-       trust_remote_code=True
+       trust_remote_code=True,
+       use_fast=False
     )
     
     # Convert the input tensor to PIL images
@@ -82,7 +85,7 @@ class GetCaptionFromImages(Sa2VABase):
     return {
       "required": {
         "images": ("IMAGE", ),
-        "prompt": ("STRING", {"default": "Describe the scene in great detail. Be sure to describe the movement of the people, animals, or objects through the scene with great detail."})
+        "prompt": ("STRING", {"default": "<image>Describe the scene in great detail. Be sure to describe the movement of the people, animals, or objects through the scene with great detail."})
       },
     }
   
