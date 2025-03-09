@@ -18,7 +18,7 @@ class Sa2VABase:
   RETURN_TYPES = ("STRING")
   RETURN_NAMES = ("caption")
   FUNCTION = "run"
-  CATEGORY = "Sa2VAWrapper"
+  CATEGORY = "Sa2VAWrapper/chat"
 
   def run(self, images, prompt):
     model_path = snapshot_download("ByteDance/Sa2VA-8B",
@@ -82,7 +82,7 @@ class GetCaptionFromImages(Sa2VABase):
   RETURN_NAMES = ("caption", )
   FUNCTION = "run"
 
-  CATEGORY = "Sa2VAWrapper"
+  CATEGORY = "Sa2VAWrapper/chat"
 
   def run(self, images, prompt):
     prediction = super().run(images, prompt)
