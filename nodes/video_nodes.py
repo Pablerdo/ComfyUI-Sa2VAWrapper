@@ -11,8 +11,8 @@ import folder_paths
 from pathlib import Path
 
 # Define the directory for saving files related to the MCLLaVA model
-files_for_sa2va_model = Path(folder_paths.folder_names_and_paths["LLavacheckpoints"][0][0]) / "files_for_mcllava"
-files_for_sa2va_model.mkdir(parents=True, exist_ok=True)  # Ensure the directory exists
+# files_for_sa2va_model = Path(folder_paths.folder_names_and_paths["LLavacheckpoints"][0][0]) / "files_for_mcllava"
+# files_for_sa2va_model.mkdir(parents=True, exist_ok=True)  # Ensure the directory exists
 
 class Sa2VABase:
   RETURN_TYPES = ("STRING")
@@ -22,8 +22,8 @@ class Sa2VABase:
 
   def run(self, images, prompt):
     model_path = snapshot_download("ByteDance/Sa2VA-8B",
-                                        local_dir=files_for_sa2va_model,
-                                        force_download=False,  # Set to True if you always want to download, regardless of local copy
+                                        # local_dir=files_for_sa2va_model,
+                                        force_download=True,  # Set to True if you always want to download, regardless of local copy
                                         local_files_only=True,  # Set to False to allow downloading if not available locally
                                         local_dir_use_symlinks="auto",  # or set to True/False based on your symlink preference
                                         ignore_patterns=["*.bin", "*.jpg", "*.png"]  # Exclude certain file types
