@@ -15,8 +15,8 @@ from pathlib import Path
 # files_for_sa2va_model.mkdir(parents=True, exist_ok=True)  # Ensure the directory exists
 
 class Sa2VABase:
-  RETURN_TYPES = ("STRING")
-  RETURN_NAMES = ("caption")
+  RETURN_TYPES = ("STRING", )
+  RETURN_NAMES = ("caption", )
   FUNCTION = "run"
   CATEGORY = "Sa2VAWrapper/chat"
 
@@ -64,7 +64,7 @@ class Sa2VABase:
 
     prediction = result['prediction']
 
-    return prediction
+    return (prediction, )
     
   
 
@@ -85,8 +85,7 @@ class GetCaptionFromImages(Sa2VABase):
   CATEGORY = "Sa2VAWrapper/chat"
 
   def run(self, images, prompt):
-    prediction = super().run(images, prompt)
-    return (prediction, )
+    return super().run(images, prompt)
 
 
 
