@@ -43,6 +43,8 @@ class Sa2VABase:
     
     # Convert the input tensor to PIL images
     vid_frames = []
+    print(f"Processing input tensor of shape: {images.shape}")
+    
     # Assuming images is a tensor of shape [batch_size, height, width, channels]
     for i in range(images.shape[0]):
         # Convert tensor to numpy array and ensure proper format
@@ -52,9 +54,15 @@ class Sa2VABase:
             img_array = (img_array * 255).astype(np.uint8)
         else:
             img_array = img_array.astype(np.uint8)
-        # Create PIL image
-        img = Image.fromarray(img_array)
+        # Create PIL image and ensure RGB mode
+        img = Image.fromarray(img_array).convert('RGB')
         vid_frames.append(img)
+    
+    # Check if we have enough frames
+    if len(vid_frames) == 0:
+        return ("Error: No valid frames could be processed.", )
+        
+    print(f"Successfully processed {len(vid_frames)} frames for Sa2VA model")
 
     result = model.predict_forward(
       video=vid_frames,
