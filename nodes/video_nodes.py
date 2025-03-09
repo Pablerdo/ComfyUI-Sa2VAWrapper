@@ -24,7 +24,7 @@ class Sa2VABase:
     model_path = snapshot_download("ByteDance/Sa2VA-8B",
                                         # local_dir=files_for_sa2va_model,
                                         force_download=True,  # Set to True if you always want to download, regardless of local copy
-                                        local_files_only=True,  # Set to False to allow downloading if not available locally
+                                        local_files_only=False,  # Set to False to allow downloading if not available locally
                                         local_dir_use_symlinks="auto",  # or set to True/False based on your symlink preference
                                         ignore_patterns=["*.bin", "*.jpg", "*.png"]  # Exclude certain file types
                                       ) 
