@@ -75,6 +75,8 @@ class Sa2VABase:
 
     prediction = result['prediction']
 
+    print(f"Prediction: {prediction}")
+    
     return (prediction, )
     
   
