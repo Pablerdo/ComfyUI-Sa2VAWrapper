@@ -4,3 +4,4 @@ __pycache__
 nodes/loader_nodes.py
 .DS_Store
 demo.py
+.venv
