@@ -11,7 +11,7 @@ import folder_paths
 from pathlib import Path
 
 # Define the directory for saving files related to the MCLLaVA model
-files_for_sa2va_model = Path(folder_paths.folder_names_and_paths["Sa2VAcheckpoints"][0][0]) / "files_for_sa2va"
+files_for_sa2va_model = Path(folder_paths.folder_names_and_paths["LLavacheckpoints"][0][0]) / "files_for_sa2va"
 files_for_sa2va_model.mkdir(parents=True, exist_ok=True)  # Ensure the directory exists
 
 class Sa2VABase:
