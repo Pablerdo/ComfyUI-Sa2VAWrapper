@@ -33,9 +33,11 @@ WIP:
 
 ### Method 2: Manual Installation
 
+```
 WORKDIR /comfyui/custom_nodes
 RUN git clone https://github.com/pablerdo/ComfyUI-Sa2VAWrapper.git --recursive
 WORKDIR /comfyui/custom_nodes/ComfyUI-Sa2VAWrapper
 RUN git reset --hard (commit hash)
 RUN if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi
 RUN if [ -f install.py ]; then python install.py || echo "install script failed"; fi
+```
