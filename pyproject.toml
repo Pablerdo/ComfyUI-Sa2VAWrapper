@@ -3,7 +3,7 @@ name = "comfyui-sa2vawrapper"
 description = "Wrapper for the Sa2VA model"
 version = "1.0.5"
 license = {file = "LICENSE"}
-dependencies = ["librosa", "numpy", "pillow>=10.3.0", "scipy", "color-matcher", "matplotlib", "huggingface_hub", "transformers", "torch", "opencv-python", "mss"]
+dependencies = ["librosa", "numpy", "pillow>=10.3.0", "scipy", "color-matcher", "matplotlib", "huggingface_hub", "transformers", "torch", "opencv-python", "mss", "peft"]
 
 [project.urls]
 Repository = "https://github.com/Pablerdo/ComfyUI-Sa2VAWrapper"
