@@ -22,8 +22,6 @@ WIP:
 ### Prerequisites
 
 - ComfyUI installation
-- CUDA-compatible GPU
-- Python 3.8+
 
 ### Method 1: Via ComfyUI Manager
 
