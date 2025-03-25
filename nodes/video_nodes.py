@@ -73,7 +73,10 @@ class Sa2VABase:
       tokenizer=tokenizer,
     )
 
+    
     prediction = result['prediction']
+    
+    prediction = prediction.replace('<|im_end|>', '').strip() # Remove the end token
 
     print(f"Prediction: {prediction}")
 
